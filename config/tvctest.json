@@ -1,0 +1,64 @@
+{
+    "Axes": {
+        "1": {
+            "target": [
+                {
+                    "type": "RNP",
+                    "source": 1,
+                    "destination": 0,
+                    "source_service": 0,
+                    "destination_service": 10,
+                    "command_id": 2
+                }
+            ],
+            "transform": {
+                "type": "map",
+                "min": 10,
+                "max": 170
+            }
+        },
+        "0": {
+            "target": [
+                {
+                    "type": "RNP",
+                    "source": 1,
+                    "destination": 0,
+                    "source_service": 0,
+                    "destination_service": 11,
+                    "command_id": 2
+                }
+            ],
+            "transform": {
+                "type": "map",
+                "min": 10,
+                "max": 170
+            }
+        }
+    },
+    "Buttons": {
+        "0": {
+            "on": [
+                {
+                    "type": "RNP",
+                    "source": 1,
+                    "destination": 2,
+                    "source_service": 0,
+                    "destination_service": 100,
+                    "command_id": 2,
+                    "command_arg":10
+                }
+            ],
+            "off": [
+                {
+                    "type": "RNP",
+                    "source": 1,
+                    "destination": 2,
+                    "source_service": 0,
+                    "destination_service": 101,
+                    "command_id": 2,
+                    "command_arg":254
+                }
+            ]
+        }
+    }
+}
