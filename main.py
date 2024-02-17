@@ -1,6 +1,5 @@
-import pygame
 import argparse
-import gamepadcontrol
+from GamepadControl.gamepadcontrol import GamepadControl
 import sys
 
 #setup joystick 
@@ -25,9 +24,17 @@ if __name__ == "__main__":
     ap.add_argument("--host", required=False, help="backend host", type=str,default="localhost")
     ap.add_argument("--port", required=False, help="backend Port", type=int,default = 1337)
 
+    ap.add_argument("--fps", required=False, help="refresh rate", type=int,default = 30)
+    ap.add_argument("--delta", required=False, help="send rate in millis", type=int,default = 100)
+
+    ap.add_argument("-v","--verbose", required=False, help="verbose mode",action = 'store_true')
+    ap.add_argument("--debug", required=False, help="debug events",action = 'store_true')
+
+
+
     args = vars(ap.parse_args())
 
-    gc = gamepadcontrol.GamepadControl(args['config'],args['joy_n'],args['host'],args['port']) 
+    gc = GamepadControl(args['config'],args['joy_n'],args['host'],args['port'],args['fps'],args['delta'],args['verbose'],args['debug']) 
 
     gc.run()
 

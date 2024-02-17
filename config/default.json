@@ -37,7 +37,7 @@
         "0": {
             "on": [
                 {
-                    "type": "POST",
+                    "type": "RNP",
                     "source": 1,
                     "destination": 10,
                     "source_service": 0,
@@ -48,7 +48,7 @@
             ],
             "off": [
                 {
-                    "type": "POST",
+                    "type": "RNP",
                     "source": 1,
                     "destination": 10,
                     "source_service": 0,
