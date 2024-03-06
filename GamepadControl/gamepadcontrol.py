@@ -1,15 +1,16 @@
 import pygame
 import socketio
 import sys
-import json
+# import json
 import copy
 import requests
 from pylibrnp import defaultpackets
 import time
+import json5 as json
 
 
 class GamepadControl():
-    def __init__(self,config:str,joy_id:int,backend_host:str,backend_port:int,fps:int,sendDelta:int,verbose:bool,debug:bool):
+    def __init__(self,config:str,joy_id:int,backend_host:str,backend_port:int,no_socketio:bool,fps:int,sendDelta:int,verbose:bool,debug:bool):
 
         self.verbose = verbose
         self.debug = debug
@@ -19,7 +20,7 @@ class GamepadControl():
         #setup sio stuff
         self.sio = socketio.Client(logger=False,engineio_logger=False)
 
-        if backend_host is None or backend_port is None:
+        if backend_host is None or backend_port is None or no_socketio:
             self.sio = None
         
         self.backend_url = "http://" + backend_host + ":" + str(backend_port) + '/'

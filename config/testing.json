@@ -1,0 +1,63 @@
+{
+    "Axes": {
+        "0": {
+            "target": [
+                {
+                    "type": "RNP",
+                    "source": 1,
+                    "destination": 10,
+                    "source_service": 0,
+                    "destination_service": 10,
+                    "command_id": 2
+                }
+            ],
+            "transform": {
+                "type": "map",
+                "min": 0,
+                "max": 180
+            }
+        },
+        "1": {
+            "target": [
+                {
+                    "type": "POST",
+                    "url": "localhost:1338/api/ventNitrous",
+                    "payload":{"arg":null},
+                    "value_name":"arg"
+                }
+            ],
+            "transform": {
+                "type": "map",
+                "min": 0,
+                "max": 180
+            }
+        }
+    },
+    "Buttons": {
+        "0": {
+            "on": [
+                {
+                    "type": "RNP",
+                    "source": 1,
+                    "destination": 10,
+                    "source_service": 0,
+                    "destination_service": 10,
+                    "command_id": 2,
+                    "command_arg":10
+                }
+            ],
+            "off": [
+                {
+                    "type": "RNP",
+                    "source": 1,
+                    "destination": 10,
+                    "source_service": 0,
+                    "destination_service": 10,
+                    "command_id": 2,
+                    "command_arg":0
+                }
+            ]
+        }
+    },
+    "Hats": {} //yeah im leaving this for now
+}
